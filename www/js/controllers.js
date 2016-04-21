@@ -43,6 +43,39 @@ angular.module('starter.controllers', [])
 
 })
 
+/* Replug Controller */
+
+.controller('SetupController', function($rootScope,$scope,Data,$ionicLoading,$state){
+
+  $scope.submitSetup = function (userDetails){
+
+    $ionicLoading.show();
+
+    Data.post('setUp', {"name": userDetails.name, "phone": userDetails.phone, "device_type": "Android", "device_version": "4.3","device_imei":"6oidiudiu78732"})
+    .then(function(response){
+
+      $ionicLoading.hide();
+      if(response.status === "success" || response.status === "info"){
+        //local store the response
+        // $localStorage.whateverpack = response;
+        $rootScope.userId = response._id;
+        $state.go("app.main");
+      }else{
+
+        console.log(response.message);
+
+      }
+
+    }, function(error){
+        //popup
+        $scope.authMsg = "Sorry! an unknown error occured, please try later";
+
+        console.log(error);
+
+    })
+  }
+})
+
 
 .controller('JCardsCtrl', function($scope) {
   console.log('CARDS CTRL Initiated');
