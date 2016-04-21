@@ -52,6 +52,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic.contrib.ui.tin
     }
   })
 
+   .state('app.add-feed', {
+    url: "/add-feed",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/Replug/add-feed.html"
+      }
+    }
+  })
+   
   .state('app.forms', {
     url: "/forms",
     views: {
@@ -65,7 +74,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic.contrib.ui.tin
     url: "/feed",
     views: {
       'menuContent': {
-        templateUrl: "templates/rubyonic/feed.html"
+        templateUrl: "templates/Replug/feed.html"
       }
     }
   })

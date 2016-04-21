@@ -15,7 +15,7 @@
 	.item-content, .item.item-radio, .item.range
 	{
 		
-		background-color: darken($brand-base-color, 8%);
+		background-color:#ff1a1a;
 		@include text-color-contrast($brand-base-color, $color-algorithm);
 		border-color: $brand-contrast-color;
 		@include input-placeholder($brand-base-color, $color-algorithm);
