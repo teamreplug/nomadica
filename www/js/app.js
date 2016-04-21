@@ -79,6 +79,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic.contrib.ui.tin
     }
   })
 
+  .state('app.settings', {
+    url: "/settings",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/Replug/settings.html"
+      }
+    }
+  })
+
   .state('app.chat-list', {
     url: "/chat-list",
     views: {
