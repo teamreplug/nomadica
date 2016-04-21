@@ -1,0 +1,127 @@
+<!-- Post Screen - Refer to viewpost.scss -->
+<ion-view view-title="View Post" hide-nav-bar="true" class="rubyonic-pane view-post-screen">
+  <!-- 
+  setting 'hide-nav-bar="true"' above enables us to create our own header bar
+  by hiding the default one without messing with ionic's state/history management
+  -->
+
+<ion-header-bar align-title="center" class="bar post-bar" ng-controller="NavigationCtrl">
+  <div class="buttons">
+    <button class="button button-clear" ng-click="go('app.feed')">
+      <span class="icon ion-home"></span>
+    </button>
+  </div>
+  <h1 class="title">
+    FAQs
+  </h1>
+  <div class="buttons">
+    <button class="button button-clear">
+      <span class="icon ion-ios-search"></span>
+    </button>
+  </div>
+</ion-header-bar>
+
+  <ion-content class="has-header">
+<div class="padding feed ruby">
+    
+    <div class="list list-inset form-rb">
+    <label class="item item-input">
+      <i class="icon ion-search placeholder-icon"></i>
+      <input type="text" class="text-color-contrast" placeholder="Type in your question to search">
+    </label>
+  </div>
+
+<div class="list">
+
+    <a class="item item-avatar" href="#">
+      <img src="img/sky.jpg">
+      <h2>Weather</h2>
+      <p>How do i get my current weather?</p>
+    </a>
+
+    <a class="item item-avatar" href="#">
+      <img src="img/sky.jpg">
+      <h2>Location Tracking</h2>
+      <p>How do i get my current location?</p>
+    </a>
+
+    <a class="item item-avatar" href="#">
+      <img src="img/sky.jpg">
+      <h2>Routing</h2>
+      <p>How do i get Route to a point?</p>
+    </a>
+
+    <a class="item item-avatar" href="#">
+      <img src="img/sky.jpg">
+      <h2>Change Language</h2>
+      <p>How do i change my current language?</p>
+    </a>
+
+    <a class="item item-avatar" href="#">
+      <img src="img/sky.jpg">
+      <h2>Change Mobile Number</h2>
+      <p>How do i get my current mobile number?</p>
+    </a>
+
+    <a class="item item-avatar" href="#">
+      <img src="img/sky.jpg">
+      <h2>Disable Notifications</h2>
+      <p>How do i get disable notifications?</p>
+    </a>
+
+    <a class="item item-avatar" href="#">
+      <img src="img/sky.jpg">
+      <h2>Contact Emergency Services</h2>
+      <p>How do i contact the nearest emergency service?</p>
+    </a>
+
+    <a class="item item-avatar" href="#">
+      <img src="img/sky.jpg">
+      <h2>Report an incident</h2>
+      <p>How do i share an incident with other pastorialists?</p>
+    </a>
+
+    <a class="item item-avatar" href="#">
+      <img src="img/sky.jpg">
+      <h2>Communicate with other pastorialists</h2>
+      <p>How do i communicate with other pastorialists?</p>
+    </a>
+
+    <a class="item item-avatar" href="#">
+      <img src="img/sky.jpg">
+      <h2>Disseminate Information</h2>
+      <p>How can i disseminate innformation to other pastorialists?</p>
+    </a>
+
+    <a class="item item-avatar" href="#">
+      <img src="img/sky.jpg">
+      <h2>Report an outbreak</h2>
+      <p>How do i report a disease outbreak to the appropriate recipients pastorialists?</p>
+    </a>
+
+    <a class="item item-avatar" href="#">
+      <img src="img/sky.jpg">
+      <h2>Identify restricted areas</h2>
+      <p>How do i identify restricted areas on the map?</p>
+    </a>
+
+    <a class="item item-avatar" href="#">
+      <img src="img/sky.jpg">
+      <h2>Identify grazeable land</h2>
+      <p>How can i identify grazeable land in the map?</p>
+    </a>
+
+    <a class="item item-avatar" href="#">
+      <img src="img/sky.jpg">
+      <h2>Interprete Weather icons</h2>
+      <p>How can i interprete the weather icons to know my exact weather?</p>
+    </a>
+
+
+</div>
+      <!-- 7-day weather feed section -->
+
+
+  </ion-content>
+
+</ion-view>
