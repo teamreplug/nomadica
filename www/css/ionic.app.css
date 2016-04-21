@@ -9891,7 +9891,6 @@ The image will be centralized by default
 .form-rb .item.item-toggle,
 .form-rb .item.item-checkbox,
 .form-rb .item-content, .form-rb .item.item-radio, .form-rb .item.range {
-  background-color: #ff1a1a;
   /* 
   $method the algorithm to find the best contrast. 
   if the color scheme doesn't go well with the
