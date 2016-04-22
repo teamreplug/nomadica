@@ -1,77 +1,121 @@
-<!-- Post Screen - Refer to viewpost.scss -->
-<ion-view view-title="View Post" hide-nav-bar="true" class="rubyonic-pane view-post-screen">
+<!-- Profile Screen - Refer to profile.scss -->
+<ion-view view-title="Main" hide-nav-bar="true" class="rubyonic-pane profile-screen">
   <!-- 
   setting 'hide-nav-bar="true"' above enables us to create our own header bar
   by hiding the default one without messing with ionic's state/history management
   -->
 
-<ion-header-bar align-title="center" class="bar post-bar" ng-controller="NavigationCtrl">
+<ion-header-bar align-title="center" class="bar profile-bar" ng-controller="NavigationCtrl">
   <div class="buttons">
-    <button class="button button-clear" ng-click="go('app.feed')">
-      <span class="icon ion-home"></span>
+    <button class="button button-clear icon ion-navicon" menu-toggle="left">
+      <span class="new-notification-bubble"></span>
     </button>
   </div>
   <h1 class="title">
-    Weather
+    Replug eMobile
   </h1>
   <div class="buttons">
     <button class="button button-clear">
-      <span class="icon ion-share"></span>
+      <i class="icon ion-android-attach"></i>
     </button>
   </div>
 </ion-header-bar>
 
-  <ion-content class="has-header">
+  <ion-content>
+    
+      <div class="profile-background">
+        <div class="profile-overlay"></div>
+        <img class="profile-wallpaper" src="img/map-dummy.jpg" alt="">
+        <img class="profile-wallpaper" src="img/demo/map.jpg" alt="">
 
-        <div class="post">
-        <div class="post-overlay"></div>
-        <img class="post-wallpaper" src="img/demo/map.jpg" alt="">
-        <div class="post-details">
-          <h3 class="post-title">Current Weather at WUSE II, Abuja Nigeria is 37°c.</h3>
-          <h4 class="post-by with-thumbnail brand-base-text-color clearfix">
-            <img src="img/demo/profile-image.jpg" class="poster-thumb" alt="">
-            Musa Bashiru
-            <span class="post-date"><span class="ion-ios-clock-outline"></span>Weather at 11:54pm</span>
-          </h4>
+
+        <div class="profile-details padding">
+          <div class="profile-actions">
+            <a href="#" class="button button-clear">
+              <i class="icon ion-ios-close brand-base-text-color"></i>
+            </a>
+          </div>
+          <div class="row responsive-sm">
+            <div class="col">
+              <h2 class="brand-base-text-color profile-name-title">Weather stuff</h2>
+              <h5 class="brand-base-text-color">here we go on the recent update</h5>
+               <!--  <div class="profile-stats secondary-font"><i class="ion-android-favorite-outline"></i> 34 recommendations</div>
+                <div class="profile-stats secondary-font brand-base-text-color"><i class="ion-email"></i> email@email.com</div>
+                <div class="profile-stats secondary-font brand-base-text-color"><i class="ion-android-call"></i> +180385-3003</div>
+                <div class="profile-stats secondary-font brand-base-text-color"><i class="ion-navigate"></i> London, England</div> -->
+            </div>
+            <!-- <div class="col col-33 profile-details-extra">
+              <div class="padding">
+                <div class="profile-stats secondary-font"><i class="ion-android-favorite-outline"></i> 34 recommendations</div>
+                <h5 class="brand-base-text-color"><i class="ion-email"></i> email@email.com</h5>
+                <h5 class="brand-base-text-color"><i class="ion-android-call"></i> +180385-3003</h5>
+                <h5 class="brand-base-text-color"><i class="ion-navigate"></i> London, England</h5>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
+      </div> -->
 
 
-      <!-- 7-day weather feed section -->
-      <style type="text/css">
-        .me{
-          margin-left: 40%;
-        }
-        .para{
-          margin-left: 30%;
-        }
-        .post-content{
-          width: 100%;
-        }
-        hr{
-          color: #2e7d32;
-        }
-        </style>
-      <div class="row post-section">
-        <div class="post-content">
-          <i class="ion-ios-thunderstorm-outline me" align="center" style="font-size:50px;"></i><p class="para">37°c on Monday</p>
-          <hr>
-          <i class="ion-ios-partlysunny-outline me" style="font-size:50px;"></i><p class="para">37°c on Tuesday</p>
-          <hr>
-          <i class="ion-ios-cloud-outline me" style="font-size:30px;"></i><p class="para">37°c on Wednesday</p>
-          <hr>
-          <i class="ion-ios-sunny-outline me" style="font-size:50px;"></i><p class="para">37°c on Thursday</p>
-          <hr>
-          <i class="ion-ios-partlysunny-outline me" style="font-size:50px;"></i><p class="para">37°c sunny on Friday</p>
-          <hr>
-          <i class="ion-ios-rainy-outline me" style="font-size:50px;"></i><p class="para">37°c on Saturday</p>
-          <hr>
-          <i class="ion-ios-thunderstorm-outline me" style="font-size:50px;"></i><p class="para">37°c rain on Sunday</p>
-          <hr>
-         
+      <!-- Profile Feed -->
+     <!--  <div class="row">
+        <div class="col">
+
+          <div class="feed-item">
+            <div class="feed-media">
+              <img src="img/demo/cherry.jpg" class="feed-image">
+              <div class="feed-gradient-overlay"></div>
+              <h6 class="feed-title">Running the distance: Maintaining long distance relationship</h6>
+            </div>
+            <div class="feed-item-details brand-base-text-color secondary-font">
+              <i class="icon ion-share"></i> 34 shares <i class="icon ion-heart"></i> 2 Likes
+            </div>
+          </div>
+
+          <div class="feed-item">
+            <div class="feed-media">
+              <img src="img/demo/guitar.jpg" class="feed-image">
+              <div class="feed-gradient-overlay"></div>
+              <h6 class="feed-title">Running the distance: Maintaining long distance relationship</h6>
+            </div>
+            <div class="feed-item-details brand-base-text-color secondary-font">
+              <i class="icon ion-share"></i> 34 shares <i class="icon ion-heart"></i> 2 Likes
+            </div>
+          </div>
+
+          <div class="feed-item">
+            <div class="feed-media">
+              <img src="img/demo/berry.jpg" class="feed-image">
+              <div class="feed-gradient-overlay"></div>
+              <h6 class="feed-title">Running the distance: Maintaining long distance relationship</h6>
+            </div>
+            <div class="feed-item-details brand-base-text-color secondary-font">
+              <i class="icon ion-share"></i> 34 shares <i class="icon ion-heart"></i> 2 Likes
+            </div>
+          </div>
+
         </div>
-      </div>
-      <!-- 7-day weather feed section -->
+        <div class="col">
+          <div class="feed-item">
+            <div class="feed-media">
+              <img src="img/demo/horses.jpg" class="feed-image">
+              <div class="feed-gradient-overlay"></div>
+              <h6 class="feed-title">Running the distance: Maintaining long distance relationship</h6>
+            </div>
+            <div class="feed-item-details brand-base-text-color secondary-font">
+              <i class="icon ion-share"></i> 34 shares <i class="icon ion-heart"></i> 2 Likes
+            </div>
+          </div>
+
+          <div class="feed-item is-quote brand-contrast-color">
+            <h3>Thou shall not PASS!!!.</h3>
+            <div class="feed-stat">Gandalf</div>
+          </div>
+
+
+        </div>
+      </div> -->
+      <!-- End Profile Feed -->
 
 
   </ion-content>

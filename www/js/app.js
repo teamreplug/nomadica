@@ -178,7 +178,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic.contrib.ui.tin
     }
   })
   .state('app.weather', {
-    url: "/setup",
+    url: "/weather",
     views: {
       'menuContent': {
         templateUrl: "templates/replug/weather.html"
@@ -187,7 +187,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic.contrib.ui.tin
   })
 
   .state('app.faq', {
-    url: "/setup",
+    url: "/faq",
     views: {
       'menuContent': {
         templateUrl: "templates/replug/faq.html"
@@ -196,7 +196,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic.contrib.ui.tin
   })
 
   .state('app.emergency', {
-    url: "/setup",
+    url: "/emergency",
     views: {
       'menuContent': {
         templateUrl: "templates/replug/emergency.html"
@@ -209,6 +209,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic.contrib.ui.tin
     views: {
       'menuContent': {
         templateUrl: "templates/replug/about-us.html"
+      }
+    }
+  })
+
+  .state('app.records', {
+    url: "/records",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/replug/records.html"
       }
     }
   })
