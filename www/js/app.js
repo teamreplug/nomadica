@@ -23,6 +23,39 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic.contrib.ui.tin
   });
 })
 
+.factory("Data", ['$http', '$rootScope',
+    function ($http, $rootScope) { 
+
+        $http.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded";
+
+        var serviceBase = "http://10.0.14.77/successApi/v1/";
+
+        var obj = {};
+       
+        obj.get = function (q) {
+            return $http.get(serviceBase + q).then(function (results) {
+                return results.data;
+            });
+        };
+        obj.post = function (q, object) {
+            return $http.post(serviceBase + q, object).then(function (results) {
+                return results.data;
+            });
+        };
+        obj.put = function (q, object) {
+            return $http.put(serviceBase + q, object).then(function (results) {
+                return results.data;
+            });
+        };
+        obj.delete = function (q) {
+            return $http.delete(serviceBase + q).then(function (results) {
+                return results.data;
+            });
+        };
+
+        return obj;
+}])
+
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
 
@@ -174,7 +207,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic.contrib.ui.tin
     url: "/setup",
     views: {
       'menuContent': {
-        templateUrl: "templates/replug/setup.html"
+        templateUrl: "templates/replug/setup.html",
+        controller: 'SetupController'
       }
     }
   })

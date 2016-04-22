@@ -1,6 +1,6 @@
 angular.module('starter.controllers', ['ngStorage'])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout,$cordovaGeolocation,$cordovaLocalNotification) {
+.controller('AppCtrl', function($scope, $ionicModal, $timeout,$cordovaGeolocation,$cordovaLocalNotification,$localStorage,Data) {
   ////uncomment from here to 
     //Notification template
       $scope.scheduleSingleNotification = function (title, id, text, soundUrl) {
@@ -16,7 +16,8 @@ angular.module('starter.controllers', ['ngStorage'])
     };
 
   //a function to be used in the request
-  $scope.get_location = function(){
+  if($localStorage.User){
+    $scope.get_location = function(){
     var posOptions = {timeout: 3600000, enableHighAccuracy: false};
   $cordovaGeolocation
     .getCurrentPosition(posOptions)
@@ -66,6 +67,10 @@ angular.module('starter.controllers', ['ngStorage'])
           
       });
       ///Stop uncommenting
+    }else{
+      console.log("cannot run location...until setup is fired")
+    }
+  
 //////
 // //////////
   // Form data for the login modal
@@ -112,7 +117,7 @@ angular.module('starter.controllers', ['ngStorage'])
 
 /* Replug Controller */
 
-.controller('SetupController', function($rootScope,$scope,Data,$ionicLoading,$state,$cordovaDevice){
+.controller('SetupController', function($rootScope,$scope,Data,$ionicLoading,$state,$cordovaDevice,$ionicPopup,$localStorage){
   $scope.showAlert = function(msg) {
      var alertPopup = $ionicPopup.alert({
      title: 'Info',
@@ -121,42 +126,45 @@ angular.module('starter.controllers', ['ngStorage'])
    };
 
   $scope.submitSetup = function (userDetails){
+    console.log("Im connected");
 
-    $ionicLoading.show();
-     document.addEventListener("deviceready", function () {
+    if(userDetails){
+        $ionicLoading.show();
+        $scope.deviceInfo = {
+          platform: "Android Web",//$cordovaDevice.getPlatform(),
+          uuid: "900029UIs92883f",//$cordovaDevice.getUUID(),
+          version: "10.4"//$cordovaDevice.getVersion()
+        }
+      Data.post('setUp', {"name": userDetails.name, "phone": userDetails.phone, "device_type":$scope.deviceInfo.platform , "device_version": $scope.deviceInfo.version,"device_imei":$scope.deviceInfo.uuid})
+      .then(function(response){
 
-    $scope.platform = $cordovaDevice.getPlatform();
+        $ionicLoading.hide();
+        if(response.status === "success" || response.status === "info"){
+          //local store the response
+          $localStorage.User = response;
+          $rootScope.userId = response._id;
+          $state.go("app.main");
+        }else{
 
-    $scope.uuid = $cordovaDevice.getUUID();
+          console.log(response.message);
 
-    $socpe.version = $cordovaDevice.getVersion();
+        }
 
-  }, false);
-    Data.post('setUp', {"name": userDetails.name, "phone": userDetails.phone, "device_type":$scope.platform , "device_version": $scope.version,"device_imei":$scope.uuid})
-    .then(function(response){
+        }, function(error){
 
-      $ionicLoading.hide();
-      if(response.status === "success" || response.status === "info"){
-        //local store the response
-        $localStorage.User = response;
-        $rootScope.userId = response._id;
-        $state.go("app.main");
-      }else{
+          //popup
 
-        console.log(response.message);
+          $scope.authMsg = "Sorry! an unknown error occured, please try later";
+          $scope.showAlert($scope.authMsg);
 
-      }
+          console.log(error);
 
-    }, function(error){
+      })
+    }else{
+      $scope.showAlert("Enter a name and phone number to continue")
+    }
 
-        //popup
-
-        $scope.authMsg = "Sorry! an unknown error occured, please try later";
-        $scope.showAlert($scope.authMsg);
-
-        console.log(error);
-
-    })
+    
   }
 })
 
