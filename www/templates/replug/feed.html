@@ -1,15 +1,15 @@
 <!-- Feed Screen - Refer to feed.scss -->
-<ion-view view-title="Home-Feed" hide-nav-bar="true" class="rubyonic-pane feed-screen" menu-toggle="left">
+<ion-view view-title="Home-Feed" hide-nav-bar="true" class="rubyonic-pane feed-screen">
   <!-- Custom Header:
   We did this so we could have a custom bar without 
   altering ionic's state/history management.
   Use with 'hide-nav-bar="true"' attribute at line 1: -->
   <div class="bar bar-ruby-header bar-transparent">
-    <button class="button ruby-button-clear icon ion-navicon brand-base-text-color">
+    <button class="button ruby-button-clear icon icon ion-android-menu" menu-toggle="left">
     	<span class="new-notification-bubble"></span>
     </button>
     <h1 class="title brand-base-text-color">Home</h1>
-    <button class="button ruby-button-clear icon ion-android-add brand-base-text-color" ui-sref="app.add-feed"></button>
+    <button class="button ruby-button-clear icon ion-android-add brand-base-text-color" ui-sref="app.add-feed " button-toggle="left"></button>
   </div>
 
   <!-- End Custom navbar -->
@@ -32,11 +32,11 @@
 		</div>
 		<div class="feed-item-details">
 		   <div class="form-group">	
-			<button class="button button-small button-assertive" style="margin-left:75px;">
+			<button class="button button-small button-assertive" style="margin-left:75px; border-color:#000000; background-color: #000000;  border-radius: 13px; ">
                  Comment
               </button>
-			   <button class="button button-small button-assertive" style="margin-left:20px; ">
-                 Share
+			   <button class="button button-small button-assertive" style="margin-left:20px; border-color:#000000; background-color: #000000; border-radius: 13px;">
+                 Share !
                </button>
 		</div>
 	</div>
@@ -60,8 +60,14 @@
 			<div class="feed-gradient-overlay"></div>
 			<h4 class="feed-title">Top antioxidants for your morning workout</h4>
 		</div>
-		<div class="feed-item-details">
-			<div class="feed-stat brand-base-text-color">4 Comments</div> <div class="feed-stat brand-base-text-color">300 Likes</div>
+	<div class="feed-item-details">
+		<div class="form-group">	
+			<button class="button button-small button-assertive" style="margin-left:75px; border-color:#000000; background-color: #000000;  border-radius: 13px; ">
+                 Comment
+              </button>
+			   <button class="button button-small button-assertive" style="margin-left:20px; border-color:#000000; background-color: #000000; border-radius: 13px;">
+                 Share !
+               </button>
 		</div>
 	</div>
 
