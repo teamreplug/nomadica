@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'ionic.contrib.ui.tinderCards'])
+angular.module('starter', ['ionic', 'starter.controllers', 'ionic.contrib.ui.tinderCards', 'ngCordova'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -164,7 +164,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic.contrib.ui.tin
     url: "/main",
     views: {
       'menuContent': {
-        templateUrl: "templates/replug/main.html"
+        templateUrl: "templates/replug/main.html",
+        controller: 'mainController'
       }
     }
   })
@@ -178,7 +179,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic.contrib.ui.tin
     }
   })
   .state('app.weather', {
-    url: "/setup",
+    url: "/weather",
     views: {
       'menuContent': {
         templateUrl: "templates/replug/weather.html"
@@ -187,7 +188,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic.contrib.ui.tin
   })
 
   .state('app.faq', {
-    url: "/setup",
+    url: "/faq",
     views: {
       'menuContent': {
         templateUrl: "templates/replug/faq.html"
@@ -196,7 +197,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic.contrib.ui.tin
   })
 
   .state('app.emergency', {
-    url: "/setup",
+    url: "/emergency",
     views: {
       'menuContent': {
         templateUrl: "templates/replug/emergency.html"
@@ -209,6 +210,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic.contrib.ui.tin
     views: {
       'menuContent': {
         templateUrl: "templates/replug/about-us.html"
+      }
+    }
+  })
+
+  .state('app.records', {
+    url: "/records",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/replug/records.html"
       }
     }
   })

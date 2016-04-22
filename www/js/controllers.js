@@ -1,6 +1,73 @@
-angular.module('starter.controllers', [])
+angular.module('starter.controllers', ['ngStorage'])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
+.controller('AppCtrl', function($scope, $ionicModal, $timeout,$cordovaGeolocation,$cordovaLocalNotification) {
+  ////uncomment from here to 
+    //Notification template
+      $scope.scheduleSingleNotification = function (title, id, text, soundUrl) {
+      $cordovaLocalNotification.schedule({
+        id: id,
+        title: title,
+        text: text,
+        sound: soundUrl
+      }).then(function (result) {
+        // ...\
+        console.log("scheduled" + id)
+      });
+    };
+
+  //a function to be used in the request
+  $scope.get_location = function(){
+    var posOptions = {timeout: 3600000, enableHighAccuracy: false};
+  $cordovaGeolocation
+    .getCurrentPosition(posOptions)
+    .then(function (position) {
+      var lat  = position.coords.latitude
+      var long = position.coords.longitude
+      Data.post('checkWeather', {
+        "name":$localStorage.User.name,
+        "phone":$localStorage.User.phone,
+        "lon":long,
+        "lat":lat
+      }).then(function(response){
+        if (response.message === "success"){
+          $localStorage.CurrentWeather = response
+        }
+      })
+      $timeout($scope.scheduleSingleNotification,300000 );
+    }, function(err) {
+      // error
+    });
+  }
+    ///to watch for location every  1 hour
+        var watchOptions = {
+        timeout : 3600000,
+        enableHighAccuracy: false // may cause errors if true
+      };
+
+      var watch = $cordovaGeolocation.watchPosition(watchOptions);
+      watch.then(
+        null,
+        function(err) {
+          // error
+        },
+        function(position) {
+          var lat  = position.coords.latitude
+          var long = position.coords.longitude
+          Data.post('checkWeather', {
+        "name":$localStorage.User.name,
+        "phone":$localStorage.User.phone,
+        "lon":long,
+        "lat":lat
+      }).then(function(response){
+        if (response.message === "success"){
+          $localStorage.CurrentWeather = response
+        }
+      })
+          
+      });
+      ///Stop uncommenting
+//////
+// //////////
   // Form data for the login modal
   $scope.loginData = {};
 
@@ -45,19 +112,33 @@ angular.module('starter.controllers', [])
 
 /* Replug Controller */
 
-.controller('SetupController', function($rootScope,$scope,Data,$ionicLoading,$state){
+.controller('SetupController', function($rootScope,$scope,Data,$ionicLoading,$state,$cordovaDevice){
+  $scope.showAlert = function(msg) {
+     var alertPopup = $ionicPopup.alert({
+     title: 'Info',
+     template: msg
+     });
+   };
 
   $scope.submitSetup = function (userDetails){
 
     $ionicLoading.show();
+     document.addEventListener("deviceready", function () {
 
-    Data.post('setUp', {"name": userDetails.name, "phone": userDetails.phone, "device_type": "Android", "device_version": "4.3","device_imei":"6oidiudiu78732"})
+    $scope.platform = $cordovaDevice.getPlatform();
+
+    $scope.uuid = $cordovaDevice.getUUID();
+
+    $socpe.version = $cordovaDevice.getVersion();
+
+  }, false);
+    Data.post('setUp', {"name": userDetails.name, "phone": userDetails.phone, "device_type":$scope.platform , "device_version": $scope.version,"device_imei":$scope.uuid})
     .then(function(response){
 
       $ionicLoading.hide();
       if(response.status === "success" || response.status === "info"){
         //local store the response
-        // $localStorage.whateverpack = response;
+        $localStorage.User = response;
         $rootScope.userId = response._id;
         $state.go("app.main");
       }else{
@@ -67,8 +148,11 @@ angular.module('starter.controllers', [])
       }
 
     }, function(error){
+
         //popup
+
         $scope.authMsg = "Sorry! an unknown error occured, please try later";
+        $scope.showAlert($scope.authMsg);
 
         console.log(error);
 
@@ -176,4 +260,26 @@ angular.module('starter.controllers', [])
   }
   
   $scope.reload()
+})
+.controller('mainController', function($scope,$rootScope,$localStorage){
+  $scope.CurrentWeather = $localStorage.CurrentWeather
 });
+//controller for feeds
+// .controller('FeedController', function($scope,$rootScope,Data){
+//   $scope.submit = function(FeedDetails){
+//     $ionicLoading.show();
+//     Data.post('addFeed', {
+//       "user_id":$localStorage.user_id,
+//       "title": FeedDetails.title,
+//       "content": FeedDetails.content,
+//       "location_lon":$localStorage.current.lon,
+//       "location_lat":$localStorage.current.lat,
+//       "location_area":$localStorage.current.area
+//     }).then(function(response){
+//       $ionicLoading.hide();
+//       if(response.message === "success"){
+//         //do something.
+//       }
+//     })
+//   }
+// })
