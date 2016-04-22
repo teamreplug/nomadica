@@ -75,17 +75,16 @@
         </ion-item>
         <ion-item nav-clear menu-close ng-click="go('app.feed')" class="item item-icon-left brand-base-text-color">
           <i class="icon ion-ios-sunny"></i>
-         Feed
-         <span class="badge badge-positive">5</span>
+         Feed 
         </ion-item>
         <ion-item nav-clear menu-close class="item item-icon-left brand-base-text-color">
           <i class="icon ion-map"></i>
           Routes       
         </ion-item>
-         <ion-item nav-clear menu-close ng-click="go('app.records')" class="item item-icon-left brand-base-text-color">
+         <!-- <ion-item nav-clear menu-close ng-click="go('app.records')" class="item item-icon-left brand-base-text-color">
           <i class="icon ion-ios-list-outline"></i>
           Monthly Records...
-        </ion-item>
+        </ion-item> -->
          <ion-item nav-clear menu-close ng-click="go('app.weather')" class="item item-icon-left brand-base-text-color">
           <i class="icon ion-ios-cloud-outline"></i>
          Weather
@@ -98,10 +97,10 @@
           <i class="icon ion-ios-cog"></i>
           Settings
         </ion-item>
-        <ion-item nav-clear menu-close ng-click="go('app.about-us')" class="item item-icon-left brand-base-text-color">
+        <!-- <ion-item nav-clear menu-close ng-click="go('app.about-us')" class="item item-icon-left brand-base-text-color">
           <i class="icon ion-person"></i>
           About
-        </ion-item>
+        </ion-item> -->
         </ion-list>
       <!-- End Ionic List -->
 
@@ -109,9 +108,9 @@
 
     <!-- Footer Bar and Buttons -->
 
-    <ion-footer-bar class="auto-height bar-assertive menu-footer-bar">
+    <ion-footer-bar menu-close class="auto-height bar-assertive menu-footer-bar" menu-toggle="left">
       <div class="row">
-        <button class="col button button-dark"> &copy; 2016 Replug</button>
+        <button ui-sref="app.about-us" class="col button button-dark"> &copy; 2016 Replug</button>
       </div>
     </ion-footer-bar>
 
