@@ -1,57 +1,72 @@
 angular.module('starter.controllers', ['ngStorage'])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout) {
-//   ////uncomment from here to 
-//     //Notification template
+.controller('AppCtrl', function($scope, $ionicModal, $timeout,$cordovaGeolocation,$cordovaLocalNotification) {
+  ////uncomment from here to 
+    //Notification template
+      $scope.scheduleSingleNotification = function (title, id, text, soundUrl) {
+      $cordovaLocalNotification.schedule({
+        id: id,
+        title: title,
+        text: text,
+        sound: soundUrl
+      }).then(function (result) {
+        // ...\
+        console.log("scheduled" + id)
+      });
+    };
 
-//   //a function to be used in the request
-//   $scope.refresh_location = function(){
-//     var posOptions = {timeout: 10000, enableHighAccuracy: false};
-//   $cordovaGeolocation
-//     .getCurrentPosition(posOptions)
-//     .then(function (position) {
-//       var lat  = position.coords.latitude
-//       var long = position.coords.longitude
-//       Data.post('API_URL', Json_Format to be Posted).then(function(response){
-//         //do something
-//       })
-//     }, function(err) {
-//       // error
-//     });
-//   }
-//   //to check location
-//     var posOptions = {timeout: 10000, enableHighAccuracy: false};
-//   $cordovaGeolocation
-//     .getCurrentPosition(posOptions)
-//     .then(function (position) {
-//       var lat  = position.coords.latitude
-//       var long = position.coords.longitude
-//       Data.post('API_URL', Json_Format to be Posted).then(function(response){
-//         //do something
-//       })
-//     }, function(err) {
-//       // error
-//     });
-//     ///to watch for location every  1 hour
-//         var watchOptions = {
-//         timeout : 3600000,
-//         enableHighAccuracy: false // may cause errors if true
-//       };
+  //a function to be used in the request
+  $scope.get_location = function(){
+    var posOptions = {timeout: 3600000, enableHighAccuracy: false};
+  $cordovaGeolocation
+    .getCurrentPosition(posOptions)
+    .then(function (position) {
+      var lat  = position.coords.latitude
+      var long = position.coords.longitude
+      Data.post('checkWeather', {
+        "name":$localStorage.User.name,
+        "phone":$localStorage.User.phone,
+        "lon":long,
+        "lat":lat
+      }).then(function(response){
+        if (response.message === "success"){
+          $localStorage.CurrentWeather = response
+        }
+      })
+      $timeout($scope.scheduleSingleNotification,300000 );
+    }, function(err) {
+      // error
+    });
+  }
+    ///to watch for location every  1 hour
+        var watchOptions = {
+        timeout : 3600000,
+        enableHighAccuracy: false // may cause errors if true
+      };
 
-//       var watch = $cordovaGeolocation.watchPosition(watchOptions);
-//       watch.then(
-//         null,
-//         function(err) {
-//           // error
-//         },
-//         function(position) {
-//           var lat  = position.coords.latitude
-//           var long = position.coords.longitude
-//           Data.post('API_URL', Json_Format to be Posted).then(function(response){
-//         //do something
-//       })
-//       });
-//       ///Stop uncommenting
+      var watch = $cordovaGeolocation.watchPosition(watchOptions);
+      watch.then(
+        null,
+        function(err) {
+          // error
+        },
+        function(position) {
+          var lat  = position.coords.latitude
+          var long = position.coords.longitude
+          Data.post('checkWeather', {
+        "name":$localStorage.User.name,
+        "phone":$localStorage.User.phone,
+        "lon":long,
+        "lat":lat
+      }).then(function(response){
+        if (response.message === "success"){
+          $localStorage.CurrentWeather = response
+        }
+      })
+          
+      });
+      ///Stop uncommenting
+//////
 // //////////
   // Form data for the login modal
   $scope.loginData = {};
@@ -245,6 +260,9 @@ angular.module('starter.controllers', ['ngStorage'])
   }
   
   $scope.reload()
+})
+.controller('mainController', function($scope,$rootScope,$localStorage){
+  $scope.CurrentWeather = $localStorage.CurrentWeather
 });
 //controller for feeds
 // .controller('FeedController', function($scope,$rootScope,Data){
