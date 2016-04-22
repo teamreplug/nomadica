@@ -1,5 +1,5 @@
 <!-- Form Screen - Refer to form.scss -->
-<ion-view view-title="Forms" hide-nav-bar="true" class="rubyonic-pane form-screen">
+<ion-view view-title="Add new feed" hide-nav-bar="true" class="rubyonic-pane form-screen">
   <!-- Custom Header:
   We did this so we could have a custom bar without 
   altering ionic's state/history management.
@@ -15,23 +15,26 @@
 <ion-content class="has-header">
     <div class="padding form-rb-plain">
       <div class="list">
-       <h3 style="margin-left:75px; ">Enter A Location</h3>
+       <h3 style="margin-left:75px; ">Add A New Feed</h3>
        <label class="item item-input">
        <input type="text" placeholder="Title">
        </label>
        <label class="item item-input">
-       <input type="text" placeholder="EnterLocation">
+       <input type="text" placeholder="Enter Location:">
        </label>
        <label class="item item-input">
-       <textarea placeholder="Comments"></textarea>
+       <textarea placeholder="Comments:" rows="20"></textarea>
        </label>
       </div>  
-        <button class="button button-small button-assertive"style="background-color:#ff1a1a; border-color:#282828;" >
+        <button class="button button-medium button-transparent"style="background-color:#0288d1;" >
            Map Location
-        </button> 
-        <button class="button button-small button-assertive" style="background-color:#22cc00; border-color:#282828; margin-left:185px; ">
+        </button>
+        <button class="button button-medium button-transparent"style="background-color:#0288d1; border-radius: 50%; margin-left:20px;" >
+        <i class="icon ion-ios-mic"></i>
+        </button>
+        <button class="button button-medidum button-" style="background-color:#43a047; margin-left:20px; ">
          Submit Feed  
         </button>
-    </div>    
+         </div>    
   </ion-content>
 </ion-view>

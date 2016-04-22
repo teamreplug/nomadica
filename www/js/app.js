@@ -4,7 +4,7 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers', 'ionic.contrib.ui.tinderCards'])
+angular.module('starter', ['ionic', 'starter.controllers', 'ionic.contrib.ui.tinderCards', 'ngCordova'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
@@ -22,6 +22,39 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic.contrib.ui.tin
     StatusBar.hide();
   });
 })
+
+.factory("Data", ['$http', '$rootScope',
+    function ($http, $rootScope) { 
+
+        $http.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded";
+
+        var serviceBase = "http://10.0.14.77/successApi/v1/";
+
+        var obj = {};
+       
+        obj.get = function (q) {
+            return $http.get(serviceBase + q).then(function (results) {
+                return results.data;
+            });
+        };
+        obj.post = function (q, object) {
+            return $http.post(serviceBase + q, object).then(function (results) {
+                return results.data;
+            });
+        };
+        obj.put = function (q, object) {
+            return $http.put(serviceBase + q, object).then(function (results) {
+                return results.data;
+            });
+        };
+        obj.delete = function (q) {
+            return $http.delete(serviceBase + q).then(function (results) {
+                return results.data;
+            });
+        };
+
+        return obj;
+}])
 
 .config(function($stateProvider, $urlRouterProvider) {
   $stateProvider
@@ -164,7 +197,8 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic.contrib.ui.tin
     url: "/main",
     views: {
       'menuContent': {
-        templateUrl: "templates/replug/main.html"
+        templateUrl: "templates/replug/main.html",
+        controller: 'mainController'
       }
     }
   })
@@ -173,12 +207,13 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic.contrib.ui.tin
     url: "/setup",
     views: {
       'menuContent': {
-        templateUrl: "templates/replug/setup.html"
+        templateUrl: "templates/replug/setup.html",
+        controller: 'SetupController'
       }
     }
   })
   .state('app.weather', {
-    url: "/setup",
+    url: "/weather",
     views: {
       'menuContent': {
         templateUrl: "templates/replug/weather.html"
@@ -187,7 +222,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic.contrib.ui.tin
   })
 
   .state('app.faq', {
-    url: "/setup",
+    url: "/faq",
     views: {
       'menuContent': {
         templateUrl: "templates/replug/faq.html"
@@ -196,7 +231,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic.contrib.ui.tin
   })
 
   .state('app.emergency', {
-    url: "/setup",
+    url: "/emergency",
     views: {
       'menuContent': {
         templateUrl: "templates/replug/emergency.html"
@@ -209,6 +244,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic.contrib.ui.tin
     views: {
       'menuContent': {
         templateUrl: "templates/replug/about-us.html"
+      }
+    }
+  })
+
+  .state('app.records', {
+    url: "/records",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/replug/records.html"
       }
     }
   })

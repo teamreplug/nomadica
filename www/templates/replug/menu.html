@@ -44,10 +44,10 @@
 
       <!-- Ionic List -->
       <ion-list>
-        <ion-item nav-clear menu-close href="#" class="item item-icon-right">
+        <ion-item nav-clear menu-close href="#" class="item item-icon-right" ng-click="get_location()">
           Refresh
           <span class="item-note brand-base-text-color">
-            Last checked 1 hr ago
+            Last checked 20 minutes ago
           </span>
           <i class="icon ion-android-sync"></i>
         </ion-item>
@@ -73,16 +73,23 @@
           <i class="icon ion-alert-circled"></i>
           Emergency
         </ion-item>
-        <ion-item nav-clear menu-close ng-click="go('app.weather')" class="item item-icon-left brand-base-text-color">
+        <ion-item nav-clear menu-close ng-click="go('app.feed')" class="item item-icon-left brand-base-text-color">
           <i class="icon ion-ios-sunny"></i>
          Feed
-          
+         <span class="badge badge-positive">5</span>
         </ion-item>
-        <!-- <ion-item nav-clear menu-close ng-click="go('app.profile')" class="item item-icon-left brand-base-text-color">
-          <i class="icon ion-android-alert"></i>
-          Reports
-          <span class="badge badge-positive">5</span>
-        </ion-item> -->
+        <ion-item nav-clear menu-close class="item item-icon-left brand-base-text-color">
+          <i class="icon ion-map"></i>
+          Routes       
+        </ion-item>
+         <ion-item nav-clear menu-close ng-click="go('app.records')" class="item item-icon-left brand-base-text-color">
+          <i class="icon ion-ios-list-outline"></i>
+          Monthly Records...
+        </ion-item>
+         <ion-item nav-clear menu-close ng-click="go('app.weather')" class="item item-icon-left brand-base-text-color">
+          <i class="icon ion-ios-cloud-outline"></i>
+         Weather
+        </ion-item>
         <ion-item nav-clear menu-close ng-click="go('app.faq')" class="item item-icon-left brand-base-text-color">
           <i class="icon ion-help"></i>
           Help
@@ -116,14 +123,15 @@
 
 
   <!-- Right Menu Bar -->
+  <!--
   <ion-side-menu side="right">
     <ion-content class="menu-screen">
 
-      <!-- Group Header -->
+      <!-- Group Header
       <h6 class="group-header">Data Representation</h6>
       <!-- End Group Header -->
 
-      <!-- Data Representation Blocks -->
+      <!-- Data Representation Blocks
       <div class="padding data-block data-icon-right">
         <i class="ion-cloud icon-right"></i>
         <h6 class="data-block-title uppercase">Storage till 24th January 2015</h6>
@@ -131,9 +139,9 @@
       </div>
       <!-- End Data Representation Blocks -->
 
-      <!-- Group Header -->
+      <!-- Group Header 
       <h6 class="group-header">Notifications</h6>
-      <!-- End Group Header -->
+      <!-- End Group Header 
 
       <div class="list notifications">
 
@@ -173,7 +181,7 @@
 
     </ion-content>
 
-  </ion-side-menu>
+  <!--/ion-side-menu-->
   <!-- End Right Menu Bar -->
 
 
