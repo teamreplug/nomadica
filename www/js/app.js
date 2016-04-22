@@ -89,8 +89,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic.contrib.ui.tin
     url: "/add-feed",
     views: {
       'menuContent': {
-        templateUrl: "templates/Replug/add-feed.html",
-        controller: 'FeedController'
+        templateUrl: "templates/Replug/add-feed.html"
       }
     }
   })
