@@ -1,123 +1,71 @@
-<!-- Profile Screen - Refer to profile.scss -->
-<ion-view view-title="Main" hide-nav-bar="true" class="rubyonic-pane profile-screen">
-  <!-- 
-  setting 'hide-nav-bar="true"' above enables us to create our own header bar
-  by hiding the default one without messing with ionic's state/history management
-  -->
-
-<ion-header-bar align-title="center" class="bar profile-bar" ng-controller="NavigationCtrl">
-  <div class="buttons">
-    <button class="button button-clear icon ion-navicon" menu-toggle="left">
-      <span class="new-notification-bubble"></span>
+<!-- Feed Screen - Refer to feed.scss -->
+<ion-view view-title="Home-Feed" hide-nav-bar="true" class="rubyonic-pane feed-screen" menu-toggle="left">
+  <!-- Custom Header:
+  We did this so we could have a custom bar without 
+  altering ionic's state/history management.
+  Use with 'hide-nav-bar="true"' attribute at line 1: -->
+  <div class="bar bar-ruby-header bar-transparent">
+    <button class="button ruby-button-clear icon ion-navicon brand-base-text-color">
+    	<span class="new-notification-bubble"></span>
     </button>
+    <h1 class="title brand-base-text-color">Home</h1>
+    <button class="button ruby-button-clear icon ion-android-add brand-base-text-color" ui-sref="app.add-feed"></button>
   </div>
-  <h1 class="title">
-    Replug eMobile
-  </h1>
-  <div class="buttons">
-    <button class="button button-clear">
-      <i class="icon ion-android-attach"></i>
-    </button>
+
+  <!-- End Custom navbar -->
+  <ion-content class="has-header">
+
+  <div class="padding feed ruby">
+  	
+  	<div class="list list-inset form-rb">
+	  <label class="item item-input">
+	    <i class="icon ion-search placeholder-icon"></i>
+	    <input type="text" class="text-color-contrast" placeholder="search">
+	  </label>
+	</div>
+
+	<div class="feed-item">
+		<div class="feed-media">
+			<img src="img/demo/berry.jpg" class="feed-image">
+			<div class="feed-gradient-overlay"></div>
+			<h4 class="feed-title">Running the distance: Maintaining long distance relationships</h4>
+		</div>
+		<div class="feed-item-details">
+		   <div class="form-group">	
+			<button class="button button-small button-assertive" style="margin-left:75px;">
+                 Comment
+              </button>
+			   <button class="button button-small button-assertive" style="margin-left:20px; ">
+                 Share
+               </button>
+		</div>
+	</div>
+
+	<div class="feed-item">
+		<div class="feed-media">
+			<img src="img/demo/guitar.jpg" class="feed-image">
+			<div class="feed-gradient-overlay"></div>
+			<h4 class="feed-title">Playing the guitar for beginners</h4>
+		</div>
+		<div class="feed-item-details--poster-type">
+			<img src="img/demo/profile-image.jpg" alt="" class="feed-poster-thumb">
+			<h5 class="feed-posted-by brand-base-color">Posted by Linsey</h5>
+			<h5 class="feed-time-post brand-base-color"><i class="ion-android-time "></i> 1h</h5>
+		</div>
+	</div>
+
+	<div class="feed-item">
+		<div class="feed-media">
+			<img src="img/demo/cherry.jpg" class="feed-image">
+			<div class="feed-gradient-overlay"></div>
+			<h4 class="feed-title">Top antioxidants for your morning workout</h4>
+		</div>
+		<div class="feed-item-details">
+			<div class="feed-stat brand-base-text-color">4 Comments</div> <div class="feed-stat brand-base-text-color">300 Likes</div>
+		</div>
+	</div>
+
   </div>
-</ion-header-bar>
-
-  <ion-content>
-    
-      <div class="profile-background">
-        <div class="profile-overlay"></div>
-        <img class="profile-wallpaper" src="img/map-dummy.jpg" alt="">
-        <img class="profile-wallpaper" src="img/demo/map.jpg" alt="">
-
-
-        <div class="profile-details padding">
-          <div class="profile-actions">
-            <a href="#" class="button button-clear">
-              <i class="icon ion-ios-close brand-base-text-color"></i>
-            </a>
-          </div>
-          <div class="row responsive-sm">
-            <div class="col">
-              <h2 class="brand-base-text-color profile-name-title">Weather stuff</h2>
-              <h5 class="brand-base-text-color">here we go on the recent update</h5>
-               <!--  <div class="profile-stats secondary-font"><i class="ion-android-favorite-outline"></i> 34 recommendations</div>
-                <div class="profile-stats secondary-font brand-base-text-color"><i class="ion-email"></i> email@email.com</div>
-                <div class="profile-stats secondary-font brand-base-text-color"><i class="ion-android-call"></i> +180385-3003</div>
-                <div class="profile-stats secondary-font brand-base-text-color"><i class="ion-navigate"></i> London, England</div> -->
-            </div>
-            <!-- <div class="col col-33 profile-details-extra">
-              <div class="padding">
-                <div class="profile-stats secondary-font"><i class="ion-android-favorite-outline"></i> 34 recommendations</div>
-                <h5 class="brand-base-text-color"><i class="ion-email"></i> email@email.com</h5>
-                <h5 class="brand-base-text-color"><i class="ion-android-call"></i> +180385-3003</h5>
-                <h5 class="brand-base-text-color"><i class="ion-navigate"></i> London, England</h5>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div> -->
-
-
-      <!-- Profile Feed -->
-     <!--  <div class="row">
-        <div class="col">
-
-          <div class="feed-item">
-            <div class="feed-media">
-              <img src="img/demo/cherry.jpg" class="feed-image">
-              <div class="feed-gradient-overlay"></div>
-              <h6 class="feed-title">Running the distance: Maintaining long distance relationship</h6>
-            </div>
-            <div class="feed-item-details brand-base-text-color secondary-font">
-              <i class="icon ion-share"></i> 34 shares <i class="icon ion-heart"></i> 2 Likes
-            </div>
-          </div>
-
-          <div class="feed-item">
-            <div class="feed-media">
-              <img src="img/demo/guitar.jpg" class="feed-image">
-              <div class="feed-gradient-overlay"></div>
-              <h6 class="feed-title">Running the distance: Maintaining long distance relationship</h6>
-            </div>
-            <div class="feed-item-details brand-base-text-color secondary-font">
-              <i class="icon ion-share"></i> 34 shares <i class="icon ion-heart"></i> 2 Likes
-            </div>
-          </div>
-
-          <div class="feed-item">
-            <div class="feed-media">
-              <img src="img/demo/berry.jpg" class="feed-image">
-              <div class="feed-gradient-overlay"></div>
-              <h6 class="feed-title">Running the distance: Maintaining long distance relationship</h6>
-            </div>
-            <div class="feed-item-details brand-base-text-color secondary-font">
-              <i class="icon ion-share"></i> 34 shares <i class="icon ion-heart"></i> 2 Likes
-            </div>
-          </div>
-
-        </div>
-        <div class="col">
-          <div class="feed-item">
-            <div class="feed-media">
-              <img src="img/demo/horses.jpg" class="feed-image">
-              <div class="feed-gradient-overlay"></div>
-              <h6 class="feed-title">Running the distance: Maintaining long distance relationship</h6>
-            </div>
-            <div class="feed-item-details brand-base-text-color secondary-font">
-              <i class="icon ion-share"></i> 34 shares <i class="icon ion-heart"></i> 2 Likes
-            </div>
-          </div>
-
-          <div class="feed-item is-quote brand-contrast-color">
-            <h3>Thou shall not PASS!!!.</h3>
-            <div class="feed-stat">Gandalf</div>
-          </div>
-
-
-        </div>
-      </div> -->
-      <!-- End Profile Feed -->
-
 
   </ion-content>
-
 </ion-view>
