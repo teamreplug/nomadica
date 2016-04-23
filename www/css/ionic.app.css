@@ -5286,8 +5286,7 @@ ion-tabs.tabs-color-active-dark .tab-item {
   overflow: hidden;
   min-height: 100%;
   max-height: 100%;
-  width: 275px;
-  background-color: #fff; }
+  width: 275px; }
   .menu .scroll-content {
     z-index: 10; }
   .menu .bar-header {
@@ -6906,7 +6905,7 @@ legend {
   width: 100%;
   border: 1px solid #ddd;
   color: #444;
-  font-size: 21px;
+  font-size: 14px;
   line-height: 2.85714; }
   legend small {
     color: #fff;
@@ -9200,13 +9199,13 @@ a.button {
 	*/
 .brand-base-background-color, .bb-bc,
 .rubyonic-pane.pane {
-  background-color: #0c0c0c; }
+  background-color: #3f3f3f; }
 
 .bar.bar-chat {
-  background-color: black; }
+  background-color: #2b2b2b; }
 
 .brand-contrast-color {
-  background-color: #008000; }
+  background-color: #008015; }
 
 .brand-base-text-color, .bb-tc,
 .button.brand-base-text-color,
@@ -9283,7 +9282,7 @@ ion-footer-bar.chat-footer-bar .button,
     color: rgba(255, 255, 255, 0.85); }
 
 .item.item-input, .menu-screen .item.item-input {
-  background-color: black; }
+  background-color: #0c0c0c; }
 
 .button.button-borderless {
   border: none;
@@ -9409,7 +9408,7 @@ ion-footer-bar.chat-footer-bar .button,
   background: none; }
 
 .bar.bar-ruby-header {
-  border-bottom: 3px solid rgba(0, 128, 0, 0.8); }
+  border-bottom: 3px solid rgba(255, 253, 208, 0.8); }
 
 .ruby .list {
   margin-top: 2px; }
@@ -9459,7 +9458,7 @@ ion-footer-bar.chat-footer-bar .button,
   right: 10px; }
 
 .feed-item .feed-item-details, .feed-item .feed-item-details--poster-type {
-  background-color: #008000;
+  background-color: #008015;
   padding: 12px; }
 
 .feed-item .feed-item-details--poster-type {
@@ -9526,7 +9525,7 @@ ion-footer-bar.chat-footer-bar .button,
   background: #E74C3C; }
 
 .menu-screen, .menu-screen.pane {
-  background: black; }
+  background: #262626; }
 
 .menu-screen .item-complex .item-content, .menu-screen .item {
   background-color: transparent; }
@@ -9548,8 +9547,8 @@ ion-footer-bar.chat-footer-bar .button,
   margin-left: 80px; }
 
 .menu-screen .list.menu-screen-searchbox {
-  background: black;
-  border-top: 3px solid #80ff80;
+  background: #262626;
+  border-top: 3px solid #80ff95;
   margin-bottom: 0; }
 
 .menu-screen .list.menu-screen-searchbox .item {
@@ -9671,7 +9670,7 @@ ion-footer-bar.menu-footer-bar .row .button {
   border-color: #F1C40F; }
 
 .tabs.chat-footer-controls {
-  background: black;
+  background: #262626;
   border-color: transparent;
   border-width: 0; }
 
@@ -9679,7 +9678,7 @@ ion-footer-bar.menu-footer-bar .row .button {
   margin: 7px auto 0 auto; }
 
 .tabs.chat-footer-controls .tab-item.tab-item-active {
-  background: #0c0c0c; }
+  background: #3f3f3f; }
 
 .bar.profile-bar {
   background-color: rgba(0, 0, 0, 0.5);
@@ -9707,7 +9706,7 @@ ion-footer-bar.menu-footer-bar .row .button {
   position: absolute;
   bottom: 0;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(50, 50, 50, 0.8);
   color: white; }
 
 .profile-details .profile-actions {
@@ -9750,7 +9749,7 @@ ion-footer-bar.menu-footer-bar .row .button {
   padding-right: 3px; }
 
 .profile-details-extra {
-  background-color: rgba(0, 128, 0, 0.6);
+  background-color: rgba(0, 128, 21, 0.6);
   margin: -10px 0px; }
 
 .chat-window {
@@ -9761,7 +9760,7 @@ ion-footer-bar.menu-footer-bar .row .button {
 
 .bar.bar-chat {
   min-height: 75px;
-  border-bottom: 4px solid #008000; }
+  border-bottom: 4px solid #008015; }
 
 .bar.bar-chat .title {
   overflow: visible;
@@ -9776,7 +9775,7 @@ ion-footer-bar.menu-footer-bar .row .button {
   left: 0;
   top: 5px;
   width: 60px;
-  border: 5px solid rgba(0, 128, 0, 0.35); }
+  border: 5px solid rgba(255, 253, 208, 0.35); }
 
 .chat-bar-contact-name {
   padding-left: 70px;
@@ -9820,17 +9819,17 @@ ion-footer-bar.menu-footer-bar .row .button {
 
 .chat-message.is-inbound {
   margin: 10px 50px 10px 10px;
-  background: rgba(0, 0, 0, 0.8); }
+  background: rgba(38, 38, 38, 0.8); }
 
 .chat-message.is-outbound {
   margin: 10px 10px 10px 50px;
-  background: rgba(0, 0, 0, 0.8); }
+  background: rgba(12, 12, 12, 0.8); }
 
 ion-footer-bar.chat-footer-bar {
-  background: #262626;
+  background: #595959;
   border-top-width: 1px;
   border-top-style: solid;
-  border-top-color: #008000; }
+  border-top-color: #008015; }
 
 ion-footer-bar.chat-footer-bar, ion-footer-bar.chat-footer-bar .row {
   padding: 0; }
@@ -9936,7 +9935,7 @@ The image will be centralized by default
   Switching between "simple" and "w3c" should fix this
   */
   color: rgba(255, 255, 255, 0.85);
-  border-color: #008000;
+  border-color: #008015;
   /* 
   $method the algorithm to find the best contrast. 
   if the color scheme doesn't go well with the
@@ -10010,7 +10009,7 @@ The image will be centralized by default
     color: rgba(255, 255, 255, 0.85); }
 
 .form-rb .item-radio input:checked ~ .item-content {
-  background-color: black; }
+  background-color: #0c0c0c; }
 
 .form-rb-plain {
   background-color: #fff; }
@@ -10289,7 +10288,7 @@ td-card.ruby-tindercard.tinder-style-four {
   position: absolute;
   bottom: 0;
   height: 100px;
-  border-top: 5px solid black; }
+  border-top: 5px solid #262626; }
   .ruby-tindercard-controls.row .tinder-control, .ruby-tindercard-controls.row .tinder-accept, .ruby-tindercard-controls.row .tinder-reject, .ruby-tindercard-controls.row .tinder-info {
     -webkit-border-radius: 500px;
     -moz-border-radius: 500px;
