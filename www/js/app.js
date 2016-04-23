@@ -256,7 +256,18 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic.contrib.ui.tin
       }
     }
   })
+
+
+.state('app.intro', {
+    url: "/intro",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/replug/intro.html"
+      }
+    }
+  })
+
   
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/app/setup');
+  $urlRouterProvider.otherwise('/app/intro');
 });
