@@ -13,6 +13,7 @@
   </div>
   <!-- End Custom navbar -->
 <ion-content class="has-header">
+<form ng-submit="submitFeed(feed)" >
     <div class="padding form-rb-plain">
       <div class="list">
        <label class="item item-input">
@@ -28,9 +29,14 @@
         <button class="button button-medium button-transparent"style="background-color:#0288d1; border-radius: 50%; margin-left:20px;" >
         <i class="icon ion-ios-mic"></i>
         </button>
-        <button class="button button-medidum button-transparent" style="background-color:#43a047; margin-left:20px;  border-radius:20px;">
+        <button type="submit" class="button button-medidum button-transparent" style="background-color:#43a047; margin-left:20px;  border-radius:20px;">
          Submit Feed  
         </button>
          </div>    
+</form>
+
+
+
+
   </ion-content>
 </ion-view>
