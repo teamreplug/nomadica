@@ -1,11 +1,11 @@
 <!-- Form Screen - Refer to form.scss -->
-<ion-view view-title="Add new feed" hide-nav-bar="true" class="rubyonic-pane form-screen" menu-toggle="left">
+<ion-view view-title="Add new feed" hide-nav-bar="true" class="rubyonic-pane form-screen">
   <!-- Custom Header:
   We did this so we could have a custom bar without 
   altering ionic's state/history management.
   Use with 'hide-nav-bar="true"' attribute at line 1: -->
   <div class="bar bar-ruby-header bar-transparent">
-    <button  ng-click="go('app.feed')" class="button ruby-button-clear icon ion-navicon brand-base-text-color">
+    <button  ng-click="go('app.feed')"menu-toggle="left" class="button ruby-button-clear icon ion-navicon brand-base-text-color">
       <span class="new-notification-bubble"></span>
     </button>
     <h1 class="title brand-base-text-color">Add Feed</h1>
@@ -17,9 +17,6 @@
       <div class="list">
        <label class="item item-input">
        <input type="text" placeholder="Title">
-       </label>
-       <label class="item item-input">
-       <input type="text" placeholder="Enter Location:">
        </label>
        <label class="item item-input">
        <textarea placeholder="Comments:" rows="20"></textarea>
