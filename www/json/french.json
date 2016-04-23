@@ -23,5 +23,97 @@
 "text area": "textarea",
 "city": "ville",
 "gps": "GPS",
-"menu": "menu"
+"menu": "menu",
+"continue":"continuer",
+
+"full name":"nom complet",
+
+"mobile number":"numéro de portable",
+
+"skip":"sauter",
+
+"select your language":"Choisissez votre langue",
+
+"info":"Info",
+
+"enter a name and phone number to continue":"entrez un numéro et le numéro de téléphone pour continuer",
+
+"ok":"D'accord",
+
+"refresh":"rafraîchir",
+
+"menu":"le menu",
+
+"emergency":"urgence",
+
+"feed":"alimentation",
+
+"routes":"la route",
+
+"weather":"Météo",
+
+"help":"Aidez-moi",
+
+"settings":"réglage",
+
+"search":"chercher",
+
+"call for help":"appeler à l'aide",
+
+"emergency services":"les services d'urgence",
+
+"comment":"commentaires",
+
+"share":"partager",
+
+"posted":"posté",
+
+"weather":"Météo",
+
+"current weather":"météo actuelle",
+
+"current":"courant",
+
+"on":"D'accord",
+
+"monday":"Lundi",
+
+"tuesday":"Mardi",
+
+"wednesday":"Mercredi",
+
+"thursday":"Jeudi",
+
+"friday":"Vendredi",
+
+"saturday":"samedi",
+
+"sunday":"dimanche",
+
+"sunny":"ensoleillé",
+
+"raining":"il pleut",
+
+"home":"domicile",
+
+"map location":"emplacement carte",
+
+"location":"emplacement",
+
+"submit feed":"soumettre alimentation",
+
+"submit":"soumettre",
+
+"comment":"commentaire",
+
+"title":"Titre",
+
+"enter location":"entrez l'emplacement",
+
+"add feed":"ajouter l'alimentation",
+
+"enter":"Entrer"
+
+}
+
 }

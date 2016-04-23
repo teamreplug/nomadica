@@ -1,26 +1,98 @@
-{
-"name":"sunan", 
-"login": "shiga",
-"phone number": "lambar tarho",
-"sign in": "shiga",
-"register": "rajistar",
-"date": "date",
-"weather": "weather",
-"map": "map",
-"feed": "feed",
-"add feed": "ƙara feed",
-"view feed" : "view feed",
-"full name" : "cikakken suna",
-"continue": "ci gaba",
-"skip": "skip",
-"title": "suna",
-"select location": "zaži location",
-"emergency": "gaggawa",
-"submit": "mi",
-"cloud": "girgijen",
-"sunny": "sunny",
-"raining": "Ana ruwan sama",
-"text area": "textarea",
-"city": "birnin",
-"gps": "GPS"
+
+
+{"name":"sunan",
+
+"full name":"cikakken suna",
+
+"mobile number":"lambar salula",
+
+"skip":"ƙetare",
+
+"select your language":"zaži your language",
+
+"info":"info",
+
+"enter a name and phone number to continue":"entre da suna da lambar waya don ci gaba",
+
+"ok":"ko",
+
+"refresh":"Wartsakewa",
+
+"menu":"takardar tsarin abinci",
+
+"emergency":"gaggawa",
+
+"feed":"abinci",
+
+"routes":"hanya",
+
+"weather":"	yanayin iska",
+
+"help":"taimaka",
+
+"settings":"saitin",
+
+"search":"caje",
+
+"callforhelp":"kira domin taimako",
+
+"emergency services":"gaggawa ayyuka",
+
+"comment":"nuna ra'ayi",
+
+"share":"raba",
+
+"posted":"matsayi",
+
+"weather":"	yanayin iska",
+
+"current weather":"yanzu weather",
+
+"current":"yanzu",
+
+"on":"a kan",
+
+"monday":"Litinin",
+
+"tuesday":"Talata",
+
+"wednesday":"Laraba",
+
+"thursday":"Alhamis",
+
+"friday":"Jumma'a",
+
+"saturday":"Asabar",
+
+"sunday":"Lahadi",
+
+"sunny":"m",
+
+"raining":"Ana ruwan sama",
+
+"home":"gida",
+
+"map location":"
+
+map location",
+
+"location":"location",
+
+"submit feed":"mi a feed",
+
+"submit":"mi",
+
+"comment":"comment",
+
+"title":"suna",
+
+"enter location":"shigar
+
+  location",
+
+"add feed":"ƙara feed",
+
+"enter":"shigar"
+
 }
+
