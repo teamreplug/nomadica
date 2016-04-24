@@ -11,7 +11,7 @@
       </button>
   </div>
   <h1 class="title">
-    Replug eMobile
+    Nomadica
   </h1>
 
 </ion-header-bar>
@@ -20,7 +20,7 @@
     
       <div class="profile-background">
         <div class="profile-overlay"></div>
-        <img class="profile-wallpaper" src="img/map-dummy.jpg" alt="">
+        <!-- <img class="profile-wallpaper" src="img/map-dummy.jpg" alt=""> -->
         <img class="profile-wallpaper" src="img/demo/map.jpg" alt="">
 
 
@@ -32,8 +32,13 @@
           </div>
           <div class="row responsive-sm">
             <div class="col">
-              <h2 class="brand-base-text-color profile-name-title">Weather stuff</h2>
-              <h5 class="brand-base-text-color">here we go on the recent update</h5>
+              <h2 class="brand-base-text-color profile-name-title"> Current Weather Info</h2>
+              <h5 class="brand-base-text-color">Temperature<i class="ion-ios-sunny-outline me assertive" style="font-size:50px;"></i>{{CurrentWeather.openWeather.list[0].main.temp}}<sup>o</sup>C&nbsp;
+              --Max:<i class="ion-ios-sunny-outline me assertive" style="font-size:50px;"></i>{{CurrentWeather.openWeather.list[0].main.temp_max}}<sup>o</sup>C</h5>
+
+              <h5 class="brand-base-text-color">Cloud<i class="ion-ios-cloud-outline me calm" style="font-size:30px;"></i>{{CurrentWeather.openWeather.list[0].clouds.all}}<sup>o</sup>C&nbsp;
+              </h5>
+              
                <!--  <div class="profile-stats secondary-font"><i class="ion-android-favorite-outline"></i> 34 recommendations</div>
                 <div class="profile-stats secondary-font brand-base-text-color"><i class="ion-email"></i> email@email.com</div>
                 <div class="profile-stats secondary-font brand-base-text-color"><i class="ion-android-call"></i> +180385-3003</div>

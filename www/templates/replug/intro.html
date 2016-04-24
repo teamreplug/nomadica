@@ -4,13 +4,15 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title>Ionic App</title>
 
-    <link href="//code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet">
+    <!-- <link href="//code.ionicframework.com/nightly/css/ionic.css" rel="stylesheet"> -->
     <script src="//code.ionicframework.com/nightly/js/ionic.bundle.js"></script>
   </head>
 
   <body ng-app="ionicApp">
 
     <ion-nav-bar class="bar-light">
+     <ion-nav-buttons side="left">
+     </ion-nav-buttons>
         <ion-nav-back-button>
         </ion-nav-back-button>
     </ion-nav-bar>
@@ -21,19 +23,10 @@
     <script id="templates/intro.html" type="text/ng-template"> </script>
       <ion-view view-title="Intro">
         <ion-nav-buttons side="left">
-          <button class="button button-positive button-clear no-animation"
-                  ng-click="startApp()" ng-show="!slideIndex">
-            Skip Intro
-          </button>
-          <button class="button button-positive button-clear no-animation"
-                  ng-click="previous()" ng-show="slideIndex > 0">
-            Previous Slide
-          </button>
         </ion-nav-buttons>
         <ion-nav-buttons side="right"> 
-          <button class="button button-positive button-clear no-animation"
-                  ng-click="next()" ng-show="slideIndex != 2">
-            Next
+          <button ui-sref="app.setup"class="button button-medidum button-transparent" style="background-color: #008015 ">
+            Skip Intro
           </button>
           <button class="button button-positive button-clear no-animation"
                   ng-click="startApp()" ng-show="slideIndex == 2">

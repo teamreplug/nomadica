@@ -3,7 +3,7 @@
 
 .login-screen {background: url($default-screen-background) no-repeat center top;}
 .login-screen .logo {padding:90px 0 20px 0; text-align: center;}
-.login-screen .logo img {width:70%;}
+.login-screen .logo img {}
 .login-screen .description {border-top:1px solid $grey; border-bottom:1px solid $grey; padding:35px; text-align:center; color : $white;}
 .login-screen .login-form {margin:40px 20px 20px 20px ;}
 .login-screen .login-form .is-transparent, .login-screen .login-form.is-transparent, .login-screen .login-form.is-transparent .item {background:none;}

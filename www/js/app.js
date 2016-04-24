@@ -28,7 +28,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic.contrib.ui.tin
 
         $http.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded";
 
-        var serviceBase = "http://10.0.14.77/successApi/v1/";
+        var serviceBase = "http://192.168.43.213/successApi/v1/";
 
         var obj = {};
        
@@ -245,6 +245,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ionic.contrib.ui.tin
     views: {
       'menuContent': {
         templateUrl: "templates/replug/about-us.html"
+      }
+    }
+  })
+
+  .state('app.routes', {
+    url: "/routes",
+    views: {
+      'menuContent': {
+        templateUrl: "templates/replug/routes.html"
       }
     }
   })
